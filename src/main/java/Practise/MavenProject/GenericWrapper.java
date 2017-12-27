@@ -29,7 +29,7 @@ public abstract class GenericWrapper{
 	int i=1;
 
 	public void invokeApp(String browser, String url) {
-		// TODO Auto-generated method stub
+		
 		try {
 			if(browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
