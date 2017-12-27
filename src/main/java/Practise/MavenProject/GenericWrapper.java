@@ -28,25 +28,25 @@ public abstract class GenericWrapper{
 	public RemoteWebDriver driver;
 	int i=1;
 
-	public void invokeApp(String browser, String url) {
+	public void invokeApp(String browserName, String url) {
 		
 		try {
-			if(browser.equalsIgnoreCase("chrome")) {
+			if(browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 			driver=new ChromeDriver();
 			
 			}
-			if(browser.equalsIgnoreCase("Firefox")) {
+			if(browserName.equalsIgnoreCase("Firefox")) {
 			System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");
 			driver=new FirefoxDriver();
 			}
 			driver.navigate().to(url);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			System.out.println("the browser " + browser + " launched succesfully");
+			System.out.println("the browser " + browserName + " launched succesfully");
 		} catch (WebDriverException e) {
 			// TODO Auto-generated catch block
-			System.out.println("the browser "+browser+" failed to launch.");
+			System.out.println("the browser "+browserName+" failed to launch.");
 		}
 		finally {
 			takeSnap();
