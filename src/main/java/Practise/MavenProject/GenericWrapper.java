@@ -54,19 +54,19 @@ public abstract class GenericWrapper{
 	}
 
 	
-	public void enterById(String idValue, String data)
+	public void enterById(String id, String data)
 	{
 		try {
-			driver.findElement(By.id(idValue)).clear();
-			driver.findElement(By.id(idValue)).sendKeys(data);
-			System.out.println("The data "+data+" entered successfully in the field "+idValue);
+			driver.findElement(By.id(id)).clear();
+			driver.findElement(By.id(id)).sendKeys(data);
+			System.out.println("The data "+data+" entered successfully in the field "+id);
 		} catch (NoSuchElementException e) {
-			System.out.println("The data "+data+" could not be entered in the field "+idValue);
+			System.out.println("The data "+data+" could not be entered in the field "+id);
 		}catch (ElementNotVisibleException e) {
-		    System.out.println("element no visible because of "+idValue);
+		    System.out.println("element no visible because of "+id);
 		} 
 		catch (WebDriverException e) {
-			System.out.println("unexpected error occurred because of idValue as "+idValue);
+			System.out.println("unexpected error occurred because of idValue as "+id);
 		}
 		
 		
